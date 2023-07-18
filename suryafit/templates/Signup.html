@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+
+Signup
+
+
+{% endblock title %}
+{% block head %}
+
+<h1>signup here</h1>
+
+<div class="container mt-2">
+   <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+<form action ="/signup" method ="Post">{% csrf_token %}
+    
+    
+    <div class="form-group">
+     <input type="email" class="form-control" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    </div>
+
+
+    <div class="class-group">
+        <input type="phone" class="form-control" placeholder="mobilenumber" id="phone"  required>
+        </div>
+
+
+    <div class="class-group">
+    <input type="password" class="form-control" placeholder="pass1" id="Password1"  required>
+    </div>
+
+    
+    <div class="class-group">
+        <input type="password" class="form-control" placeholder="pass2" id="InputPassword1"  required>
+        </div>
+   
+    <button type="submit" class="btn btn-primary">Signup</button>
+    <div>
+    <a href="/handlelogin">already user</a>
+    </div>
+
+  </form>
+</div>
+</div>
+
+
+{% endblock head  %}
