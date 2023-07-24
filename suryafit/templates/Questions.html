@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile
+{% endblock title %}
+{% block body %}
+
+<h1>Question papers</h1>
+
+<div class="container mt-2">
+   <div class="row">
+    <div >
+        <form action ="/Questions" method ="POST">{% csrf_token %}
+        <h1>Group1 Questions</h1>
+        
+        
+       
+        <ul class="list-group">
+
+    </li>
+  {% for Q in Adminques  %}
+            <li class="list-group-item bg-warning text-dark">
+                <lable  style="color: red; font-size: 20px;">1{{Q.Que1}}</lable><br>
+                <input type="radio" name="contact" value="email" id="email" >EMail
+                
+                
+                <input type="radio" name="contact" value="phone" id="phone"> Phone
+                 
+                 
+                 <input type="radio" name="contact" value="message" id="message">Contact
+            
+            
+            </li>
+            <li class="list-group-item bg-warning text-dark">
+               <lable  style="color: red; font-size: 20px;">2{{Q.Que2}}</lable><br> <input type="radio" name="contact" value="email" id="email" >EMail
+                
+                
+                <input type="radio" name="contact1" value="phone" id="phone"> Phone
+                 
+                 
+                 <input type="radio" name="contact1" value="message" id="message">Contact
+            </li>
+            <li class="list-group-item bg-warning text-dark">
+                <p id="3">
+                   <lable  style="color: red; font-size: 20px;">3
+                    {{Q.Que3}}</lable><br>
+                    <input type="radio" name="contac2" value="email" id="email" >EMail
+                    <input type="radio" name="contact2" value="phone" id="phone"> Phone
+                    <input type="radio" name="contact2" value="message" id="message">Contact
+            </li>
+           
+          
+            {% endfor %}
+           
+          </ul>
+          
+          <button 
+          type="submit" 
+          class="btn btn-primary">
+          Submit
+        </button>
+          
+        </form>
+        
+        
+        
+        </div>
+    </div>
+   
+{%endblock body%}
+
+
